@@ -8,8 +8,7 @@ public class GenreInfo {
         this.genreID = genreID;
         this.genreType = genreName;
     }
-
-    // Getters and setters
+    
     public int getGenreID() {
         return genreID;
     }

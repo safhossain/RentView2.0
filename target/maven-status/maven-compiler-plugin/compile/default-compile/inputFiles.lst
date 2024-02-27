@@ -5,8 +5,10 @@
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Persistence/Director_CRUD.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/MovieInfo.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Business/MovieManagement.java
+/home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/SubmitReviewServlet.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/LoginServlet.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/GenreInfo.java
+/home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/ReviewInfo.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/RentMovieServlet.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/ManagerAccessFilter.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/RentalInfo.java
@@ -20,6 +22,8 @@
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/DirectorInfo.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/IndexServlet.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Persistence/Member_CRUD.java
+/home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Business/ReviewManager.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/GUI/MovieServlet.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Helper/EncryptionUtil.java
+/home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Persistence/Review_CRUD.java
 /home/student/NetBeansProjects/RentView/src/main/java/com/ryerson/rentview/Persistence/Base_CRUD.java

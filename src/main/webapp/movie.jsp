@@ -2,7 +2,10 @@
 <%@page import="com.ryerson.rentview.Helper.MovieInfo"%>
 <%@page import="com.ryerson.rentview.Persistence.Movie_CRUD"%>
 <%@page import="com.ryerson.rentview.Business.RentalManager"%>
+<%@page import="com.ryerson.rentview.Business.ReviewManager"%>
 <%@page import="com.ryerson.rentview.Helper.MemberInfo"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ryerson.rentview.Helper.ReviewInfo"%>
 <html>
     <head>
         <title>Movie Details</title>
@@ -48,9 +51,17 @@
             <% } %>
             <form action="SubmitReviewServlet" method="post">
                 <input type="hidden" name="movieID" value="<%= movie.getMovieID() %>">
-                <textarea name="review" placeholder="Enter your review here..."></textarea>
+                Rating: <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                Review: <textarea name="review" placeholder="Enter your review here..."></textarea><br>
                 <button type="submit">Submit Review</button>
             </form>
+
         <% 
             } else {
         %>
@@ -58,6 +69,25 @@
         <% 
             }
         %>
+        
+        <% 
+            List<ReviewInfo> reviews = ReviewManager.getReviewsByMovieID(movieID);
+            if (reviews != null && !reviews.isEmpty()) {
+        %>
+            <table>
+                <tr>
+                    <th>Rating</th>
+                    <th>Review</th>
+                </tr>
+                <% for (ReviewInfo review : reviews) { %>
+                    <tr>
+                        <td><%= review.getRating() %></td>
+                        <td><%= review.getReviewText() %></td>
+                    </tr>
+                <% } %>
+            </table>
+        <% } %>
+
         
         <footer>
             <nav>

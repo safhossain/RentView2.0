@@ -50,13 +50,7 @@ nav {
     display: inline-block;
     margin: 10px;
 }
-/*
-.movie-poster img, .movie-poster-small img {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
-}
-*/
+
 #scrolling-movies .scroll-container {
     overflow-x: auto;
     white-space: nowrap;
@@ -72,17 +66,16 @@ footer {
     text-align: left;
 }
 
-
 footer nav {
-    max-width: 1200px; /* Adjust this value as needed */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 #featured .movie-poster:hover {
-    transition: transform 0.3s ease; /* Smooth transition for the transform property */
-    display: inline-block; /* Make sure the element respects the transform */
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 #featured .movie-poster:hover:hover {
-    transform: scale(1.1); /* Increase the size by 10% when hovered */
+    transform: scale(1.1);
 }

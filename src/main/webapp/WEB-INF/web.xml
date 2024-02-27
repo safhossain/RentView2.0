@@ -36,6 +36,10 @@
         <servlet-name>RentMovieServlet</servlet-name>
         <servlet-class>com.ryerson.rentview.GUI.RentMovieServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubmitReviewServlet</servlet-name>
+        <servlet-class>com.ryerson.rentview.GUI.SubmitReviewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -67,6 +71,10 @@
         <servlet-name>RentMovieServlet</servlet-name>
         <url-pattern>/RentMovieServlet</url-pattern>
         <url-pattern>/RentMovie</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitReviewServlet</servlet-name>
+        <url-pattern>/SubmitReviewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
