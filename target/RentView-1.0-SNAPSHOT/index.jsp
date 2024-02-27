@@ -15,7 +15,7 @@
         <title>RentView</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="styles.css">
-    </head>    
+    </head>
     <body>
         <header>
             <nav>
@@ -54,7 +54,9 @@
                         MovieInfo movie = movies.get(i);
             %>
                         <div class="movie-poster">
-                            <img src="<%= request.getContextPath() + movie.getMovieImagePath() %>" alt="<%= movie.getMovieName() %>" width="270" height="400">
+                            <a href="movie.jsp?movieID=<%= movie.getMovieID() %>">
+                                <img src="<%= request.getContextPath() + movie.getMovieImagePath() %>" alt="<%= movie.getMovieName() %>" width="270" height="400">
+                            </a>
                         </div>
             <% 
                     }
@@ -69,9 +71,10 @@
                         for (int i = 3; i < movies.size(); i++) {
                             MovieInfo movie = movies.get(i);
                 %>
-                            <div class="movie-poster-small">
-                                <img src="<%= request.getContextPath() + movie.getMovieImagePath() %>" alt="<%= movie.getMovieName() %>" width="135" height="200">
-                            </div>
+                            <div class="movie-poster">
+                            <a href="movie.jsp?movieID=<%= movie.getMovieID() %>">
+                                <img src="<%= request.getContextPath() + movie.getMovieImagePath() %>" alt="<%= movie.getMovieName() %>" width="270" height="400">
+                            </a>
                 <% 
                         }
                     }

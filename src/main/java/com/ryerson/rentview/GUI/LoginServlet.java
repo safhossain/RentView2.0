@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-//import javax.servlet.annotation.WebServlet;
 
-//@WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -26,8 +24,16 @@ public class LoginServlet extends HttpServlet {
         if (memberInfo != null) {
             HttpSession session = request.getSession();
             session.setAttribute("memberInfo", memberInfo);
+            String redirect = request.getParameter("redirect");
+            String movieID = request.getParameter("movieID");
             if ("manager".equals(memberInfo.getMemberType())) {
                 response.sendRedirect("ManagerServlet");
+            } else if (redirect != null && !redirect.isEmpty()) {
+                if (movieID != null && !movieID.isEmpty()) {
+                    response.sendRedirect(redirect + "?movieID=" + movieID);
+                } else {
+                    response.sendRedirect(redirect);
+                }
             } else {
                 response.sendRedirect("index.jsp");
             }

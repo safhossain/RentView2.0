@@ -18,6 +18,12 @@
         <form action="LoginServlet" method="post">
             Email: <input type="text" name="email"><br>
             Password: <input type="password" name="password"><br>
+            <% if (request.getParameter("redirect") != null) { %>
+                <input type="hidden" name="redirect" value="<%= request.getParameter("redirect") %>">
+                <% if (request.getParameter("movieID") != null) { %>
+                    <input type="hidden" name="movieID" value="<%= request.getParameter("movieID") %>">
+                <% } %>
+            <% } %>
             <input type="submit" value="Login">
         </form>        
     </body>
