@@ -22,6 +22,10 @@ public class RentalManager {
         Rental_CRUD.deleteRental(rentalID);
     }
     
+    public static boolean authenticateRentalByMemberID(int memberID, int movieID) {
+        return Rental_CRUD.authenticateRentalByMemberID(memberID, movieID);
+    }
+    
     public static void main(String[] args) {
         List<RentalInfo> rentals = getAllRentals();
         for (RentalInfo rental : rentals) {

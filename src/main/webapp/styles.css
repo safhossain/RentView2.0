@@ -65,14 +65,24 @@ nav {
 footer {
     background: #f8f8f8;
     padding: 10px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
     text-align: left;
 }
 
-footer nav a {
-    text-decoration: none;
-    color: black;
+
+footer nav {
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto;
+}
+
+#featured .movie-poster:hover {
+    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+    display: inline-block; /* Make sure the element respects the transform */
+}
+
+#featured .movie-poster:hover:hover {
+    transform: scale(1.1); /* Increase the size by 10% when hovered */
 }

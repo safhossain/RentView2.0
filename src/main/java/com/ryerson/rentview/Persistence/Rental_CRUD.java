@@ -38,7 +38,7 @@ public class Rental_CRUD extends Base_CRUD {
         return rentalId;
     }
 
-    public static RentalInfo getRental(int rentalId) {
+    public static RentalInfo readRental(int rentalId) {
         Connection con = Base_CRUD.getCon();
         try {
             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM RENTAL WHERE rental_ID = ?");
@@ -116,6 +116,26 @@ public class Rental_CRUD extends Base_CRUD {
         return rentals;
     }
     
+    public static boolean authenticateRentalByMemberID(int memberID, int movieID) {
+        Connection con = Base_CRUD.getCon();
+        try {
+            PreparedStatement pstmt = con.prepareStatement(
+                "SELECT * FROM RENTAL WHERE member_ID = ? AND movie_ID = ?"
+            );
+            pstmt.setInt(1, memberID);
+            pstmt.setInt(2, movieID);
+            ResultSet rs = pstmt.executeQuery();
+            
+            boolean hasRented = rs.next();
+            con.close();
+            return hasRented;
+        } catch (SQLException e) {
+            System.out.println("Query failed: " + e);
+            return false;
+        }
+    }
+
+    
     public static void main(String[] args) {
         Connection con = getCon();
         if (con != null) {
@@ -130,13 +150,16 @@ public class Rental_CRUD extends Base_CRUD {
 //                                       ", Return Date: " + rental.getReturnDate());
 //                }
                 
-                int memberID = 3;
-                int movieID = 2;
-                Date rentalDate = Date.valueOf("2024-02-27");
-                Date returnDate = Date.valueOf("2024-03-11");
+//                int memberID = 3;
+//                int movieID = 2;
+//                Date rentalDate = Date.valueOf("2024-02-27");
+//                Date returnDate = Date.valueOf("2024-03-11");
+//
+//                int rentalID = Rental_CRUD.createRental(memberID, movieID, rentalDate, returnDate);
+//                System.out.println("Rental created with ID: " + rentalID);
 
-                int rentalID = Rental_CRUD.createRental(memberID, movieID, rentalDate, returnDate);
-                System.out.println("Rental created with ID: " + rentalID);
+                System.out.println("member 3 with movie 1: " + authenticateRentalByMemberID(3,1));
+                System.out.println("member 4 with movie 5: " + authenticateRentalByMemberID(4,5));
                 
                 con.close();
             } catch (SQLException e) {
